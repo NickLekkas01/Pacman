@@ -73,15 +73,17 @@ public class Main implements KeyListener, ActionListener{
     }
     public static void main(String args[]) throws IOException, InterruptedException {
 
+
         new Main();
+
         PACMAN_TABLE = new char[HEIGHT][WIDTH];
 
         /* Read pacman map from file pac.txt */
         readFromFile("pac.txt", PACMAN_TABLE);
 
         //Printing the pacman map
+        clearScreen();
         printMap();
-
         while(true){
             /*Check if Lost */
             if(Lost()){
@@ -256,7 +258,7 @@ public class Main implements KeyListener, ActionListener{
 //                    System.out.print(data.charAt(j));
                     Table[i][j] = data.charAt(j);
                 }
-                System.out.println();
+//                System.out.println();
                 i++;
             }
             myReader.close();
@@ -416,7 +418,7 @@ public class Main implements KeyListener, ActionListener{
     }
 
     private static int []PacManMovement(char[][] pacman_table, int []pacmanPos) {
-        Scanner keyboard = new Scanner(System.in);
+//        Scanner keyboard = new Scanner(System.in);
         pacman_table[pacmanPos[0]][pacmanPos[1]] = ' ';
 //        while(true){
 //            char ch = keyboard.next().charAt(0);
